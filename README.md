@@ -7,7 +7,7 @@ login: brew services start mysql
 
 # UNIQUE constraint
 
-Syntax to define a UNIQUE constraint:
+--> Syntax to define a UNIQUE constraint:
 
 CREATE TABLE table_name(
  ...,
@@ -16,7 +16,7 @@ CREATE TABLE table_name(
  );
  
  
- Syntax to define a UNIQUE constraint for two or more columns:
+ --> Syntax to define a UNIQUE constraint for two or more columns:
  
  CREATE TABLE table_name(
   ...,
@@ -28,7 +28,7 @@ CREATE TABLE table_name(
  
  
  
- When you want to make UNIQUE the combination of two columns:
+ --> When you want to make UNIQUE the combination of two columns:
  
  CREATE TABLE suppliers (
     supplier_id INT AUTO_INCREMENT,
@@ -39,3 +39,15 @@ CREATE TABLE table_name(
     CONSTRAINT uc_name_address UNIQUE (name , address)
 );
 
+
+--> To drop a unique constraint
+
+DROP INDEX index_name ON table_name;
+DROP INDEX uc_name_adress ON suppliers;
+
+
+--> To add a new unique constraint
+
+ALTER TABLE suppliers
+ADD CONSTRAINT uc_name_address 
+UNIQUE (name,address);
